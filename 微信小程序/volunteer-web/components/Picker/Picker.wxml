@@ -1,0 +1,5 @@
+<view class="Picker">
+  <picker bind:change="bindPickerChange" ValIndex="{{ValIndex}}" range="{{array}}">
+     <text class="PickerText">{{array[ValIndex]}}</text> <slot></slot> 
+  </picker>
+</view>

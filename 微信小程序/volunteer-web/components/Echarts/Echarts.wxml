@@ -1,0 +1,3 @@
+<view class="Whole">
+  <ec-canvas animation="{{true}}" type="2d" id="{{ChartWordDomId}}" canvas-id="{{WordCanvasId}}" ec="{{ ec }}"></ec-canvas>
+</view>

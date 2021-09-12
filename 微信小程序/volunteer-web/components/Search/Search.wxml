@@ -1,0 +1,124 @@
+<view class="Search">
+	<van-toast id="van-toast" />
+	<van-sticky >
+		<van-search value="{{ SearchKeywords }}" input-align="center" placeholder="请输入搜索关键词" use-action-slot
+			bind:change="onChange">
+			<view slot="action">
+				<van-cell center>
+					<view slot="title">
+						<van-button round type="info" size="small" bind:tap="onSearch">搜索</van-button>
+					</view>
+					<slot></slot>
+				</van-cell>
+			</view>
+		</van-search>
+	</van-sticky>
+	<view>
+		<!-- 热搜索 -->
+		<view class="Associa" hidden="{{Associa}}">
+			<van-cell bind:tap='getWord' center wx:for="{{WordArr}}" wx:key="index" wx:for-item='Word'
+				data-Word='{{Word.value}}' wx:for-index="index">
+				<van-icon class="AssociaIcon" slot="icon" size="18" name="search" />
+				<view slot="title" class="Association">
+					{{Word.value}}
+				</view>
+			</van-cell>
+		</view>
+		<!-- 点击热搜索 -->
+		<!-- 优化 -->
+		<!-- <block wx:for="{{SchoolArr}}" wx:key="indexs" wx:for-item='Schools'>{{indexs}}
+			<van-cell-group class="searchSchool" hidden="{{isSchool}}" center wx:for="{{SchoolArr[index]}}" wx:key="index"
+				wx:for-item='School'>
+				<van-cell center data-Word='{{School.name}}' wx:for-index="index" link-type="navigateTo"
+					url="/pages/School/School?SchoolName={{School.name}}">
+					<view slot="title" class="SchoolTag">
+						<view>
+							<view>
+								<text>{{School.name}}</text>
+								<van-tag round plain type="danger">
+									{{ School.dual_class_name === null || School.dual_class_name === "" ? "无" :
+									School.dual_class_name }}
+								</van-tag>
+								<van-tag round plain type="danger">
+									{{ School.f211 === 1 ? "211" : "无" }}
+								</van-tag>
+								<van-tag round plain type="danger">
+									{{ School.f985 === 1 ? "985" : "无" }}
+								</van-tag>
+							</view>
+							<van-tag plain round type="primary">
+								{{ School.school_nature_name }}/{{
+								School.type_name
+								}}/{{ School.belong }}
+							</van-tag>
+						</view>
+						<view class="wz">
+							<van-icon name="location-o" size="22" />
+							<view>{{ School.province_name }}</view>
+						</view>
+					</view>
+				</van-cell>
+			</van-cell-group>
+		</block> -->
+		<!-- 没优化 -->
+		<van-cell-group class="searchSchool" hidden="{{isSchool}}" center wx:for="{{SchoolArr}}" wx:key="index"
+			wx:for-item='School'>
+			<van-cell center data-Word='{{School.name}}' wx:for-index="index" link-type="navigateTo"
+				url="/pages/School/School?SchoolName={{School.name}}">
+				<view slot="title" class="SchoolTag">
+					<view>
+						<view>
+							<text>{{School.name}}</text>
+							<van-tag round plain type="danger">
+								{{ School.dual_class_name === null || School.dual_class_name === "" ? "无" :
+								School.dual_class_name }}
+							</van-tag>
+							<van-tag round plain type="danger">
+								{{ School.f211 === 1 ? "211" : "无" }}
+							</van-tag>
+							<van-tag round plain type="danger">
+								{{ School.f985 === 1 ? "985" : "无" }}
+							</van-tag>
+						</view>
+						<van-tag plain round type="primary">
+							{{ School.school_nature_name }}/{{
+							School.type_name
+							}}/{{ School.belong }}
+						</van-tag>
+					</view>
+					<view class="wz">
+						<van-icon name="location-o" size="22" />
+						<view>{{ School.province_name }}</view>
+					</view>
+				</view>
+			</van-cell>
+		</van-cell-group>
+
+		<view hidden="{{isMajor}}">
+			<van-cell center class="searchMajor" bind:tap='getWord' wx:for="{{MajorArr}}" wx:key="index" wx:for-item='Word'
+				data-Word='{{Word.major}}' wx:for-index="index">
+				<view slot="title" class="in">
+					<view class="in">
+						<view> {{ Word.major }} </view>
+						<view class="wordSize division">
+							{{ Word.education }}
+						</view>
+					</view>
+					<view>
+						<view class="wordSize">{{ Word.year }}</view>
+					</view>
+				</view>
+			</van-cell>
+		</view>
+		<van-cell-group wx:if="{{MoreMajor}}">
+			<van-cell wx:if="{{More}}" center custom-style=" background-color: #eff0f5; color:#969799; text-align: center;">
+				<view slot="title"> 没有更多了</view>
+			</van-cell>
+			<van-cell wx:else center custom-style=" background-color: #eff0f5; text-align: center;">
+				<view slot="title">
+					<van-loading color="#1989fa" size="24px">加载中...</van-loading>
+				</view>
+			</van-cell>
+		</van-cell-group>
+	</view>
+</view>

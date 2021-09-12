@@ -1,0 +1,149 @@
+<view class="Member">
+	<van-toast id="van-toast" />
+	<van-dialog id="van-dialog" />
+	<Tabs LeftValue="{{LeftValue}}" RightValue="{{RightValue}}" bind:onChangeTab='onChangeTab'>
+		<view slot="nav-left">
+			<van-collapse accordion value="{{ activeName }}" bind:change="onChange">
+				<van-collapse-item title="会员权益" name="1" value="了解详情">
+					<van-cell class="VanCell">
+						<view slot="title" class="tit">专家级测评体系</view>
+					</van-cell>
+					<van-cell use-label-slot>
+						<view slot="title" class="tit">解锁能上的大学</view>
+						<view slot="label" class="Label">全部院校、专业数据信息</view>
+					</van-cell>
+					<van-cell use-label-slot>
+						<view slot="title" class="tit">全面院校录取分析</view>
+						<view slot="label" class="Label">让报考更有依据</view>
+					</van-cell>
+					<van-cell use-label-slot>
+						<view slot="title" class="tit">志愿院校专业录取评估</view>
+						<view slot="label" class="Label">录取评估（“冲、稳、保、垫”）</view>
+					</van-cell>
+					<van-cell use-label-slot>
+						<view slot="title" class="tit">快速查找招生院校</view>
+						<view slot="label" class="Label">历年录取数据</view>
+					</van-cell>
+					<van-cell use-label-slot>
+						<view slot="title" class="tit">各专业就业前景分析</view>
+						<view slot="label" class="Label">专业对口岗位种类、各岗位数量及薪酬情况</view>
+					</van-cell>
+					<van-cell use-label-slot>
+						<view slot="title" class="tit">节约志愿填报时间</view>
+						<view slot="label" class="Label">将期望专业按录取分数线从高到低进行院校排列，一目了然</view>
+					</van-cell>
+				</van-collapse-item>
+			</van-collapse>
+			<van-grid column-num="1" border="{{ false }}">
+				<van-grid-item use-slot>
+					<van-viewider contentPosition="center">激活码获取流程</van-viewider>
+					<image mode="widthFix" src="http://gkzy.renzihang.cn/static/img/Vipprocess.28ec5a59.png" />
+					<image mode="widthFix" src="http://gkzy.renzihang.cn/static/img/Vipimg.c36ba545.jpg" />
+					<view class="VLocation">
+						<van-button wx:if="{{getVip}}" bind:tap="ongetActivation" class="Mybut">
+							获取激活码
+						</van-button>
+						<van-field wx:if="{{setVip}}" input-align="center" slot="label" value="{{valueActivation}}"
+							bind:change="onvVlueActivation" placeholder="请输入激活码">
+							<view slot="button">
+								<van-button size="small" color="linear-gradient(to right, #ff6034, #ee0a24)" bind:tap="onVIPAccount">
+									马上激活
+								</van-button>
+							</view>
+						</van-field>
+						<!-- <van-viewider contentPosition="center" wx:if="{{Power}}">获取一对一服务流程</van-viewider> -->
+						<van-viewider contentPosition="center" wx:if="{{Power}}"></van-viewider>
+					</view>
+				</van-grid-item>
+			</van-grid>
+			<van-collapse accordion value="{{ MemberInformation}}" bind:change="onMemberInformation">
+				<van-collapse-item title="我的会员信息" name="1" value="了解详情">
+					<van-cell title="激活时间" value="{{Activation}}" />
+					<van-cell title="过期时间" value="{{beOverdue}}" />
+				</van-collapse-item>
+			</van-collapse>
+		</view>
+		<view slot="nav-right">
+			<van-collapse accordion value="{{ expert }}" bind:change="onExpert">
+				<van-collapse-item title="会员权益" name="1" value="了解详情">
+					<van-cell class="VanCell">
+						<view slot="title" class="tit">专家级测评体系</view>
+					</van-cell>
+					<van-cell use-label-slot>
+						<view slot="title" class="tit">解锁能上的大学</view>
+						<view slot="label" class="Label">全部院校、专业数据信息</view>
+					</van-cell>
+					<van-cell use-label-slot>
+						<view slot="title" class="tit">全面院校录取分析</view>
+						<view slot="label" class="Label">让报考更有依据</view>
+					</van-cell>
+					<van-cell use-label-slot>
+						<view slot="title" class="tit">志愿院校专业录取评估</view>
+						<view slot="label" class="Label">录取评估（“冲、稳、保、垫”）</view>
+					</van-cell>
+					<van-cell use-label-slot>
+						<view slot="title" class="tit">快速查找招生院校</view>
+						<view slot="label" class="Label">历年录取数据</view>
+					</van-cell>
+					<van-cell use-label-slot>
+						<view slot="title" class="tit">各专业就业前景分析</view>
+						<view slot="label" class="Label">专业对口岗位种类、各岗位数量及薪酬情况</view>
+					</van-cell>
+					<van-cell use-label-slot>
+						<view slot="title" class="tit">节约志愿填报时间</view>
+						<view slot="label" class="Label">将期望专业按录取分数线从高到低进行院校排列，一目了然</view>
+					</van-cell>
+				</van-collapse-item>
+				<van-collapse-item title="专家一对一" name="2" value="了解详情">
+					<van-cell use-label-slot>
+						<view slot="title" class="tit">特约专家一对一服务</view>
+						<view slot="label" class="Label">为你定制个性化志愿，专家助你圆梦心仪大学!</view>
+					</van-cell>
+				</van-collapse-item>
+			</van-collapse>
+			<van-grid column-num="1" border="{{ false }}">
+				<van-grid-item use-slot>
+					<van-viewider contentPosition="center">获取一对一服务流程</van-viewider>
+					<image mode="widthFix" lazy-load src="http://gkzy.renzihang.cn/static/img/Vipprocess.28ec5a59.png" />
+					<image mode="widthFix" lazy-load src="http://gkzy.renzihang.cn/static/img/Vipimg.c36ba545.jpg" />
+					<view class="VLocation">
+						<van-button wx:if="{{getVip}}" bind:tap="ongetActivation" class="Mybut">
+							获取激活码
+						</van-button>
+						<van-field wx:if="{{setVip}}" input-align="center" slot="label" value="{{valueActivation}}"
+							bind:change="onvVlueActivation" placeholder="请输入激活码">
+							<view slot="button">
+								<van-button size="small" color="linear-gradient(to right, #ff6034, #ee0a24)" bind:tap="onVIPAccount">
+									马上激活
+								</van-button>
+							</view>
+						</van-field>
+						<!-- <van-viewider contentPosition="center" wx:if="{{Power}}">一对一服务权益</van-viewider> -->
+						<van-viewider contentPosition="center" wx:if="{{Power}}"></van-viewider>
+					</view>
+				</van-grid-item>
+			</van-grid>
+			<van-collapse accordion value="{{ ExpertInformation}}" bind:change="onExpertInformation">
+				<van-collapse-item title="我的会员信息" name="1" value="了解详情">
+					<van-cell title="激活时间" value="{{Activation}}" />
+					<van-cell title="过期时间" value="{{beOverdue}}" />
+				</van-collapse-item>
+			</van-collapse>
+		</view>
+	</Tabs>
+	<van-dialog use-title-slot use-slot show="{{ show }}" bind:close="onClose">
+		<view class="Diatit">账号获取激活码</view>
+		<view class="DivDialog">
+			<view class="Dia">
+				(1).已有激活码(激活卡)请直接点击确定，输入激活码，进行激活。
+			</view>
+			<!-- <view class="Dia">
+			</view> -->
+			<view class="Dia">
+				(2).没有激活码请对下方二维码进行截图，前去微信扫一扫，添加好友，进行获取激活码。
+			</view>
+			<van-image width="140" height="140" fit="cover" lazy-load
+				src="http://gkzy.renzihang.cn/static/img/%E8%80%81%E6%9D%BF%E5%BE%AE%E4%BF%A1%E5%8F%B7.8a7cd251.jpg" />
+		</view>
+	</van-dialog>
+</view>

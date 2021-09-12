@@ -1,0 +1,49 @@
+<view class="Fraction">
+	<van-sticky>
+		<van-nav-bar>
+			<view slot="left">我的分数:
+			</view>
+			<view slot="title">
+				<van-cell-group>
+					<van-field value="{{ value }}" type="number" center="{{true}}" placeholder="请输入总分数" border="{{ true }}" bind:change="onChange" />
+				</van-cell-group>
+			</view>
+			<view class="dropdown" slot="right">
+				<van-dropdown-menu>
+					<van-dropdown-item value="{{ dropdownValue }}" options="{{ option }}" />
+				</van-dropdown-menu>
+			</view>
+		</van-nav-bar>
+		<van-nav-bar>
+			<view slot="left">分数范围:
+			</view>
+			<view class="navTitle" slot="title">
+				<view class="barTitle">
+					<input placeholder="分数" type="number" />
+					<view>
+						~
+					</view>
+
+					<input placeholder="分数" type="number" />
+				</view>
+			</view>
+			<view slot="right">
+				<van-button round icon="search" type="info" size="small">搜索分数</van-button>
+			</view>
+		</van-nav-bar>
+	</van-sticky>
+
+
+
+
+	<YLM-Table config="{{tableConfig}}" rows="{{rows}}" keys="{{keys}}" headers="{{headers}}"></YLM-Table>
+
+
+
+
+
+
+
+
+
+</view>

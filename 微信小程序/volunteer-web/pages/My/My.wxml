@@ -1,0 +1,40 @@
+<view class="My">
+	<van-toast id="van-toast" />
+	<van-dialog id="van-dialog" />
+	<!-- 未登录 -->
+	<view class="Sign" bind:tap="onLogin" wx:if="{{My}}">
+		<van-image lazy-load round width="3.4rem" height="3.4rem" fit="cover" src="https://img.yzcdn.cn/vant/cat.jpeg" />
+		<view>登录/注册</view>
+	</view>
+	<!-- 已登录 -->
+	<view class="vancell" wx:else>
+		<view class="van">
+			<van-image lazy-load round slot="icon" width="3rem" height="3rem" fit="cover"
+				src="https://img.yzcdn.cn/vant/cat.jpeg" />
+			<view>{{user}}</view>
+		</view>
+		<!-- <van-button class="butsize" size="small" round bind:tap="onEdit">
+			编辑信息
+		</van-button> -->
+	</view>
+	<view class="cellline"> </view>
+	<van-cell center is-link bind:tap="onMember">
+		<van-icon slot="icon" size="24" color="#FBC02D" name="vip-card-o" />
+		<view slot="title" class="Myicon">我的会员</view>
+	</van-cell>
+	<view class="cellline"> </view>
+	<van-cell center is-link bind:tap="onCollection">
+		<van-icon slot="icon" size="24" color="#FF5722" name="star-o" />
+		<view slot="title" class="Myicon">我的收藏</view>
+	</van-cell>
+	<view class="cellline"> </view>
+	<van-cell center is-link bind:tap="onEvaluation">
+		<van-icon slot="icon" size="24" color="#1976D2" name="newspaper-o" />
+		<view slot="title" class="Myicon">我的测评</view>
+	</van-cell>
+	<view class="cellline"> </view>
+	<van-cell center title="" wx:if="{{My}}" class="MydropOut" >
+	</van-cell>
+	<van-cell center title="退出登录" wx:else class="MydropOut" bind:tap="ondropOut">
+	</van-cell>
+</view>

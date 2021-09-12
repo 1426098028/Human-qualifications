@@ -1,0 +1,161 @@
+/* view{
+  box-sizing: border-box;
+} */
+.scrollClass{
+
+ 
+}
+.ylm-Table {
+
+    display: inline-flex;
+    flex-direction: column;
+    border-bottom: 0;
+    min-width: 100%;
+    font-size: 30rpx;
+}
+
+.ylm-Table-border {
+    border: solid 2rpx #dfdfdf;
+}
+
+.ylm-Table-header {
+ 
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    font-weight: bold;
+}
+.ylm-Table-content{
+ 
+}
+.ylm-Table-header-column {
+    padding: 30rpx 10rpx;
+    flex-shrink: 0;
+    word-break: break-all;
+    word-wrap: break-word;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.last-column {
+    flex-grow: 1;
+}
+.ylm-Table-header-column-border {
+    border-right: solid 2rpx #dfdfdf;
+}
+
+.ylm-Table-header-column-border:last-child {
+    border-right: solid 0rpx #dfdfdf;
+}
+
+.ylm-Table-content-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+.ylm-Table-row-white {
+    background-color: #ffffff;
+}
+
+.ylm-Table-row-gray {
+    background-color: #b9d8fa;
+}
+
+.ylm-Table-content-column {
+    padding: 26rpx 10rpx;
+    flex-shrink: 0;
+    word-break: break-all;
+    word-wrap: break-word;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ylm-Table-content-column-border {
+    border-top: solid 2rpx #dfdfdf;
+    border-right: solid 2rpx #dfdfdf;
+}
+
+.ylm-Table-content-column-border:last-child {
+    border-right: solid 0rpx #dfdfdf;
+}
+
+.nodata {
+    text-align: center;
+    padding: 30rpx;
+    color: #999;
+}
+
+
+
+.VIPview {
+    color: red;
+    border: 1rpx solid red;
+    border-radius: 10rpx;
+    padding: 0 10rpx 4rpx 10rpx;
+    text-align: center;
+
+}
+
+.Ordinary {
+    color: #1989fa;
+    border: 1rpx solid #1989fa;
+    border-radius: 10rpx;
+    padding: 0 10rpx 4rpx 10rpx;
+    text-align: center;
+
+}
+
+
+/* 险 */
+.Risk {
+    background-color: #ee0a24;
+    border-radius: 25%;
+    color: #ffffff;
+    padding: 0 10rpx 4rpx 11rpx;
+    text-align: center;
+}
+
+/* 冲 */
+.punching {
+    background-color: #ff976a;
+    border-radius: 25%;
+    padding: 0 10rpx 4rpx 11rpx;
+    color: #ffffff;
+    text-align: center;
+
+}
+
+/* 稳 */
+.stable {
+    background-color: #07c160;
+    border-radius: 25%;
+    padding: 0 10rpx 4rpx 11rpx;
+    color: #ffffff;
+    text-align: center;
+
+}
+
+/* 保 */
+.protect {
+    background-color: #1989fa;
+    border-radius: 25%;
+    padding: 0 10rpx 4rpx 11rpx;
+    color: #ffffff;
+    text-align: center;
+
+}
+
+/* 垫 */
+.pad {
+    background-color: #6495c5;
+    border-radius: 25%;
+    padding: 0 10rpx 4rpx 11rpx;
+    color: #ffffff;
+    text-align: center;
+}

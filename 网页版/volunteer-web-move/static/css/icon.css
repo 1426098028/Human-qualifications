@@ -1,0 +1,39 @@
+@font-face {
+    font-family: "iconfont";
+    /* Project id 2563708 */
+    /* src: url('//at.alicdn.com/t/font_2563708_7wyf8f8dvgh.woff2?t=1621592296407') format('woff2'), url('//at.alicdn.com/t/font_2563708_7wyf8f8dvgh.woff?t=1621592296407') format('woff'), url('//at.alicdn.com/t/font_2563708_7wyf8f8dvgh.ttf?t=1621592296407') format('truetype'); */
+    src: url('../fonts/font_2563708_7wyf8f8dvgh.woff2') format('woff2'), url('../fonts/font_2563708_7wyf8f8dvgh.woff') format('woff'), url('../fonts/font_2563708_7wyf8f8dvgh.ttf') format('truetype');
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-xuexiao:before {
+    color: rgb(233, 89, 89);
+    content: "\e665";
+}
+
+.icon-zhuanyehua:before {
+    color: rgb(30, 59, 226);
+    content: "\e6a9";
+}
+
+.icon-fenshuxian:before {
+    color: #34698b;
+    content: "\e615";
+}
+
+.icon-zhuanye:before {
+    color: red;
+    content: "\e67e";
+}
+
+.icon-tubiaozhizuomoban_linghuojiuyerenyuanzoushi-copy:before {
+    color: #f8125f6b;
+    content: "\e610";
+}

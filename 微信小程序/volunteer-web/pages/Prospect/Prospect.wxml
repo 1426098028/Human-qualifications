@@ -1,0 +1,48 @@
+<view class="Prospect">
+	<van-toast id="van-toast" />
+	<van-dialog id="van-dialog" />
+	<van-sticky>
+
+		<van-cell center>
+			<view slot="right-icon" class="ProspectRight">
+				<van-search value="{{ Analysis}}" placeholder="请输入专业" use-action-slot bind:change="onSearch"
+					input-align="center">
+				</van-search>
+				<van-button size="small" round type="info" bind:click="onReport"> 生成分析报告 </van-button>
+			</view>
+		</van-cell>
+
+
+	</van-sticky>
+
+
+	<block wx:if="{{Hot}}">
+		<van-cell-group center>
+			<van-cell icon="search" bind:click='getWord' center wx:for="{{WordArr}}" wx:key="index" wx:for-item='Word'
+				data-Word='{{Word.value}}' wx:for-index="index">
+				<view slot="title">
+					{{Word.value}}
+				</view>
+			</van-cell>
+		</van-cell-group>
+	</block>
+
+	<Vip wx:if="{{isVip}}"></Vip>
+
+
+
+	<view wx:if="{{isTable}}">
+		<!-- 饼图 -->
+		<view class="Pietit van-multi-ellipsis--l2">
+			<view class="tit1">{{ Analysis }}专业的相关职位信息统计</view>
+			<view class="tit2">各大招聘网站职位数据实时采集统计</view>
+		</view>
+		<Echarts type="2d"  ChartWordDomId="{{PieDom}}" WordCanvasId="{{PieCanvas}}" Options="{{PieOptions}}" class="PieClass">
+		</Echarts>
+		<!-- 气泡图 -->
+		<Echarts type="2d" ChartWordDomId="{{BubDom}}" WordCanvasId="{{BubCanvas}}" Options="{{BubOptions}}" class="BubClass">
+		</Echarts>
+		<YLM-Table config="{{tableConfig}}" rows="{{rows}}" keys="{{keys}}" headers="{{headers}}"></YLM-Table>
+
+	</view>
+</view>

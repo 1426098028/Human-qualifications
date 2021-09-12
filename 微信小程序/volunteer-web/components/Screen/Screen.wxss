@@ -1,0 +1,1 @@
+.Screen .van-popup{width:80vw !important;height:87vh !important;z-index:10}.Screen .Result{display:flex;align-items:center;justify-content:space-around}

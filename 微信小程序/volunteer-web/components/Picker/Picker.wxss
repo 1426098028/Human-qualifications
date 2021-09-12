@@ -1,0 +1,6 @@
+.Picker .PickerText{
+  color: #868686;
+  border: #868686 solid 1rpx;
+  border-radius: 4rpx;
+  padding: 4rpx 6rpx;
+}

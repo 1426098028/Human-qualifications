@@ -1,0 +1,4 @@
+<view class="PitchingLine">
+<YLM-Table bind:onClick="onClick" config="{{tableConfig}}" rows="{{rows}}" keys="{{keys}}" headers="{{headers}}"></YLM-Table>
+
+</view>

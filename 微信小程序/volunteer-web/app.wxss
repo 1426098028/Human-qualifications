@@ -1,0 +1,23 @@
+/* page,view,text,swiper,swiper-item,image,navigator{
+
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+} */
+
+a {
+    color: #323233;
+}
+#van-dialog{
+  z-index: 100;
+}
+#van-toast{
+  z-index: 100;
+}
+page {
+    background-color: #eff0f5;
+    font-size: 16px;
+    font-size: 32rpx;
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC', 'miui', 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
+    
+}

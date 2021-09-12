@@ -1,0 +1,29 @@
+<view class="Login">
+  <van-toast id="van-toast" />
+  <van-dialog id="van-dialog" />
+  <!-- 登录表单 -->
+  <view class="LoginField1">
+    <view class="Loginh2">登录</view>
+    <form bindsubmit="onLogin">
+      <van-cell-group>
+        <van-field class="Loginfield"
+         value="{{username}}" 
+         type="text"
+          required 
+         input-align="center"
+          clearable 
+           maxlength="10"
+            left-icon="user-o"
+          placeholder="请输入用户" 
+          name="username" 
+    
+        />
+        <van-field class="Loginfield" value="{{password}}" type="password" required input-align="center"
+         clearable maxlength="20" left-icon="closed-eye" placeholder="请输入密码" name="password"
+          />
+      </van-cell-group>
+      <van-button class="Loginbutton" formType="submit" round block color="#3697FF"> 登录 </van-button>
+    </form>
+    <view class="Registerdiv" bind:tap="onRegister">马上注册</view>
+  </view>
+</view>

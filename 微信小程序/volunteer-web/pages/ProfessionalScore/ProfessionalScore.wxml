@@ -1,0 +1,9 @@
+<view class="ProfessionalScore">
+  <van-toast id="van-toast" />
+	<van-dialog id="van-dialog" />
+  <Vip wx:if="{{isVip}}"></Vip>
+
+
+
+  <YLM-Table wx:if="{{isTable}}" bind:onClick="onClick" config="{{tableConfig}}" rows="{{rows}}" keys="{{keys}}" headers="{{headers}}"></YLM-Table>
+</view>

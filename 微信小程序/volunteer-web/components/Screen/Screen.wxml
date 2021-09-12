@@ -1,0 +1,126 @@
+<view class="Screen">
+  <van-popup class="ScreenAll" show="{{Popupshow}}" position="right" round bind:close="onClose">
+    <van-divider contentPosition="center">筛选</van-divider>
+    <van-divider contentPosition="left">热门标签</van-divider>
+    <van-grid column-num="3" border="{{ false }}">
+      <van-checkbox-group value="{{ SaveScreenResult }}" bind:change="onCheckboxScreen">
+        <van-grid-item use-slot>
+          <van-checkbox icon-size="0px" name="双一流">
+            <van-button plain size="mini" hairline type="info">双一流</van-button>
+          </van-checkbox>
+        </van-grid-item>
+        <van-grid-item use-slot>
+          <van-checkbox icon-size="0px" name="985">
+            <van-button plain size="mini" hairline type="info">985</van-button>
+          </van-checkbox>
+        </van-grid-item>
+        <van-grid-item use-slot>
+          <van-checkbox icon-size="0px" name="211">
+            <van-button plain size="mini" hairline type="info">211</van-button>
+          </van-checkbox>
+        </van-grid-item>
+      </van-checkbox-group>
+    </van-grid>
+    <van-divider contentPosition="left">所在地</van-divider>
+    <van-grid column-num="3" border="{{ true }}">
+      <van-checkbox-group max="{{ 1 }}" value="{{ SaveScreenRadio }}" bind:change="onRadioScreen">
+        <van-grid-item use-slot bind:click="onProvince" data-Province="全国">
+          <van-checkbox icon-size="0px"  name="全国">
+            <van-button plain size="mini" hairline type="info">全国</van-button>
+          </van-checkbox>
+        </van-grid-item>
+        <van-grid-item use-slot bind:click="onProvince" data-Province="北京">
+          <!-- bind:tap="onProvince" -->
+          <van-checkbox icon-size="0px" name="北京">
+            <van-button plain size="mini" hairline type="info">北京</van-button>
+          </van-checkbox>
+        </van-grid-item>
+        <van-grid-item use-slot bind:click="onProvince" data-Province="广东">
+          <van-checkbox icon-size="0px" name="广东">
+            <van-button plain size="mini" hairline type="info">广东</van-button>
+          </van-checkbox>
+        </van-grid-item>
+        <van-grid-item use-slot bind:click="onProvince" data-Province="江苏">
+          <van-checkbox icon-size="0px" name="江苏">
+            <van-button plain size="mini" hairline type="info">江苏</van-button>
+          </van-checkbox>
+        </van-grid-item>
+        <van-grid-item use-slot bind:click="onProvince" data-Province="上海">
+          <van-checkbox icon-size="0px" name="上海">
+            <van-button plain size="mini" hairline type="info">上海</van-button>
+          </van-checkbox>
+        </van-grid-item>
+        <van-grid-item use-slot bind:click="onProvince" data-Province="重庆">
+          <van-checkbox icon-size="0px" name="重庆">
+            <van-button plain size="mini" hairline type="info">重庆</van-button>
+          </van-checkbox>
+        </van-grid-item>
+        <van-grid-item use-slot bind:click="onProvince" data-Province="天津">
+          <van-checkbox icon-size="0px" name="天津">
+            <van-button plain size="mini" hairline type="info">天津</van-button>
+          </van-checkbox>
+        </van-grid-item>
+        <van-grid-item use-slot bind:click="onProvince" data-Province="河北">
+          <van-checkbox icon-size="0px" name="河北">
+            <van-button plain size="mini" hairline type="info">河北</van-button>
+          </van-checkbox>
+        </van-grid-item>
+        <van-grid-item use-slot bind:click="onProvince" data-Province="山西">
+          <van-checkbox icon-size="0px" name="山西">
+            <van-button plain size="mini" hairline type="info">山西</van-button>
+          </van-checkbox>
+        </van-grid-item>
+        <van-grid-item use-slot bind:click="onProvince" data-Province="辽宁">
+          <van-checkbox icon-size="0px" name="辽宁">
+            <van-button plain size="mini" hairline type="info">辽宁</van-button>
+          </van-checkbox>
+        </van-grid-item>
+        <van-grid-item use-slot bind:click="onProvince" data-Province="吉林">
+          <van-checkbox icon-size="0px" name="吉林">
+            <van-button plain size="mini" hairline type="info">吉林</van-button>
+          </van-checkbox>
+        </van-grid-item>
+        <van-grid-item use-slot bind:click="onProvince" data-Province="香港">
+          <van-checkbox icon-size="0px" name="香港">
+            <van-button plain size="mini" hairline type="info">香港</van-button>
+          </van-checkbox>
+        </van-grid-item>
+        <van-grid-item use-slot bind:click="onProvince" data-Province="内蒙古">
+          <van-checkbox icon-size="0px" name="内蒙古">
+            <van-button plain size="mini" hairline type="info">内蒙古</van-button>
+          </van-checkbox>
+        </van-grid-item>
+        <van-grid-item use-slot bind:click="onProvince" data-Province="黑龙江">
+          <van-checkbox icon-size="0px" name="黑龙江">
+            <van-button plain size="mini" hairline type="info">黑龙江</van-button>
+          </van-checkbox>
+        </van-grid-item>
+        <van-grid-item use-slot bind:click="onProvince" data-Province="宁夏">
+          <van-checkbox icon-size="0px" name="宁夏">
+            <van-button plain size="mini" hairline type="info">宁夏</van-button>
+          </van-checkbox>
+        </van-grid-item>
+      </van-checkbox-group>
+    </van-grid>
+    <van-divider contentPosition="center">筛选结果</van-divider>
+    <van-cell-group>
+      <van-field value="{{ ScreeningResults }}" type="textarea" rows="2" disabled input-align="center" placeholder="筛选结果" autosize border="{{ false }}" />
+    </van-cell-group>
+    <van-divider contentPosition="center"></van-divider>
+    <!-- <van-divider contentPosition="center">提交</van-divider> -->
+    <van-cell center>
+      <view class="Result">
+        <van-button round size="small" bind:tap="onResetFilter" type="danger">重置筛选</van-button>
+        <van-button round size="small" bind:tap="onSubmitFilter" type="info">提交</van-button>
+      </view>
+    </van-cell>
+    <van-divider contentPosition="center"></van-divider>
+  </van-popup>
+
+ 
+ 
+ 
+
+
+
+</view>

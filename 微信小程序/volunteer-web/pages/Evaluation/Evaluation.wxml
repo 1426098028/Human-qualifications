@@ -1,0 +1,45 @@
+<view class="Evaluation">
+  <van-toast id="van-toast" />
+    <van-dialog id="van-dialog" />
+  <Tabs active="{{active}}" LeftValue="{{LeftValue}}" RightValue="{{RightValue}}" bind:onChangeTab='onChangeTab' data-dom="Dom">
+
+    <view slot="nav-left">
+      <!-- 简单 -->
+      <van-cell-group center wx:for="{{Lite}}" wx:key="index" wx:for-item='answer'>
+        <van-cell custom-style="padding:30rpx 0 30rpx 10rpx; font-size:30rpx;" center
+          title="{{index+1}}.{{answer.subjectTopic}}" />
+        <radio-group bind:change="onLite" data-index="{{index}}">
+          <van-cell center border="{{ false }}">
+            <radio color="#1989fa" slot="title" value="A">  <rich-text nodes=" {{answer.answer.A}}"></rich-text>   </radio>
+          </van-cell>
+          <van-cell center border="{{ false }}">
+            <radio color="#1989fa" slot="title" value="B">  <rich-text nodes=" {{answer.answer.B}}"></rich-text>   </radio>
+          </van-cell>
+        </radio-group>
+      </van-cell-group>
+      <van-cell-group center>
+        <van-button round type="info" bind:tap="LiteCarry" block>提交</van-button>
+        <!-- <view>没有做的题目：{{Statistics}}</view> -->
+      </van-cell-group>
+    </view>
+    <view slot="nav-right">
+      <!-- 困难 -->
+      <van-cell-group center wx:for="{{Detailed}}" wx:key="index" wx:for-item='answer'>
+        <van-cell custom-style="padding:30rpx 0 30rpx 10rpx; font-size:30rpx;" center
+          title="{{index+1}}.{{answer.subjectTopic}}" />
+        <radio-group bind:change="onDetailed" data-index="{{index}}">
+          <van-cell center border="{{ false }}">
+            <radio color="#1989fa" slot="title" value="A"> {{answer.answer.A}} </radio>
+          </van-cell>
+          <van-cell center border="{{ false }}">
+            <radio color="#1989fa" slot="title" value="B"> {{answer.answer.B}} </radio>
+          </van-cell>
+        </radio-group>
+      </van-cell-group>
+      <van-cell-group center>
+        <van-button round type="info" bind:tap="DetailedCarry" block>提交</van-button>
+        <!-- <view>没有做的题目：{{Statistics}}</view> -->
+      </van-cell-group>
+    </view>
+  </Tabs>
+</view>

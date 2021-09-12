@@ -1,0 +1,1 @@
+.Tab{background:#fff;width:100vw}.Tab .van-tabs__wrap{height:80rpx !important;line-height:80rpx !important;text-align:center}.Tab .van-tabs__nav--card{padding:0px;align-items:center;margin:0px;height:80rpx !important;line-height:80rpx !important}.Tab .van-tabs__nav--card .van-ellipsis{height:80rpx !important;line-height:80rpx !important}

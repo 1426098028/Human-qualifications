@@ -1,0 +1,10 @@
+<view  class="Vip">
+  <!-- <block > -->
+  <block >
+    <van-empty description="请升级为Vip用户">
+      <van-button size="normal" round type="danger"   bind:tap="onVipService" class="but" custom-style="">
+        马上升级
+      </van-button>
+    </van-empty>
+  </block>
+</view>

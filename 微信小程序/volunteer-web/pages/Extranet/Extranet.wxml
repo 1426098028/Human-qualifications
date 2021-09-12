@@ -1,0 +1,4 @@
+<!-- <web-view src="https://www.baidu.com/"></web-view> -->
+<web-view src="{{Url}}"></web-view>
+<van-toast id="van-toast" />
+	<van-dialog id="van-dialog" />

@@ -1,0 +1,17 @@
+* {
+  font-size: 16px;
+}
+a {
+  color: #323233;
+}
+body {
+  background-color: #eff0f5;
+}
+.cell-Line {
+  height: 1.4vh;
+  background: transparent;
+}
+.onVip {
+  background: #fff;
+  height: 70vh;
+}

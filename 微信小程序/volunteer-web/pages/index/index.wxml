@@ -1,0 +1,42 @@
+<van-toast id="van-toast" />
+<van-dialog id="van-dialog" />
+<view class="Home">
+	<swiper>
+		<swiper-item class="" item-id="">
+			<image mode="widthFix" src="http://gkzy.renzihang.cn/static/img/img.dafd8186.jpg" />
+		</swiper-item>
+	</swiper>
+	<view class="content">
+		<view class="con" bind:tap="onLocation">
+			<van-icon slot="icon" size="30" color="#1989fa" name="location-o" />
+			<view class="box">{{ City }}</view>
+		</view>
+		<view class="conbox CheckSchool" bind:tap="onCheckSchool">
+			<view class="box">查学校</view>
+			<view class="box1"><i class="box11 iconfont icon-xuexiao"> </i></view>
+		</view>
+		<view class="conbox CheckMajor" bind:tap="onCheckMajor">
+			<view class="box">查专业</view>
+			<view class="box1"><i class="box12 iconfont icon-zhuanye"> </i></view>
+		</view>
+		<view class="conbox CheckScore" bind:tap="onCheckScore">
+			<view class="box">录取分析</view>
+			<view class="box1"><i class="box13 iconfont icon-fenshuxian"> </i></view>
+		</view>
+		<view class="conbox Occupation" bind:tap="onOccupation">
+			<view class="box">职业测评</view>
+			<view class="box1"><i class="box14 iconfont icon-zhuanyehua"> </i></view>
+		</view>
+		<view class="conbox Employment" bind:tap="onProspect">
+			<view class="box">就业前景</view>
+			<view class="box1">
+				<i class="box15 iconfont icon-tubiaozhizuomoban_linghuojiuyerenyuanzoushi-copy">
+				</i>
+			</view>
+		</view>
+	</view>
+	<view class="become" bind:tap="onVipService">
+		<view class="become1">会员</view>
+		<view class="become2">服务</view>
+	</view>
+</view>

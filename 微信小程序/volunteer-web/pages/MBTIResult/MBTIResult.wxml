@@ -1,0 +1,56 @@
+<view class="MBTIResult">
+	<van-cell-group>
+		<van-cell>
+			<view slot="title">
+				用户名 : {{usernamedata}}
+			</view>
+		</van-cell>
+	</van-cell-group>
+	<van-cell-group wx:if="{{AddEvaluationdata.telephone!==''}}">
+		<van-cell>
+			<view slot="title">
+				手机号 : {{AddEvaluationdata.telephone}}
+			</view>
+		</van-cell>
+	</van-cell-group>
+	<van-cell-group>
+		<van-cell>
+			<view slot="title">
+				答题时间 : {{AnswerTime}}
+			</view>
+		</van-cell>
+	</van-cell-group>
+	<view class="Pietit van-multi-ellipsis--l2">
+		<view class="tit1">测评分析报告图</view>
+	</view>
+	<Echarts ChartWordDomId="{{RadarDom}}" WordCanvasId="{{RadarCanvas}}" Options="{{RadarOptions}}" class="RadarClass"></Echarts>
+	<van-cell-group>
+		<van-cell>
+			<view slot="title">
+				<text class="EvaluationResults">测评结果</text> : {{Analysis}}
+			</view>
+		</van-cell>
+	</van-cell-group>
+	<van-cell-group>
+		<van-cell>
+			<view slot="title">
+				<text class="EvaluationResults">担任角色</text> : {{	AddEvaluationdata.personality}}
+			</view>
+		</van-cell>
+	</van-cell-group>
+	<van-cell-group>
+		<van-cell>
+			<view slot="title">
+				<text class="EvaluationResults">性格特征</text> : {{	AddEvaluationdata.features}}
+			</view>
+		</van-cell>
+	</van-cell-group>
+	<van-cell-group>
+		<van-cell>
+			<view slot="title">
+				<text class="EvaluationResults">适合职位</text> : {{	AddEvaluationdata.profession}}
+			</view>
+		</van-cell>
+	</van-cell-group>
+
+</view>

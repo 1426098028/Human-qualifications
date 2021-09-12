@@ -1,0 +1,6 @@
+<view class="Location">
+  <van-toast id="van-toast" />
+<van-dialog id="van-dialog" />
+  <van-search bind:tap="LocationSearch" disabled placeholder="请输入省份" />
+  <map id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="{{ZoomLevel}}" markers="{{Markers}}" show-compass="{{Compass}}" show-location="{{direction}}"> </map>
+</view>

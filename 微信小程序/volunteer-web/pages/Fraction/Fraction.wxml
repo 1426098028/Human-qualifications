@@ -1,0 +1,107 @@
+<view class="Fraction">
+	<van-toast id="van-toast" />
+	<van-dialog id="van-dialog" />
+
+
+	<van-sticky>
+		<!-- 我的排位 -->
+		<van-cell-group>
+			<van-cell class="Scorecell">
+				<view class="ScoreRange" slot="title">我的排位</view>
+				<view class="Ranking" slot="right-icon">
+					<!-- <van-field value="{{ Ranking }}" type="number" maxlength="20" minlength="0"  input-align="center"
+				placeholder="请输入排位" bind:change="onRanking" /> -->
+					<van-field required value="{{ Ranking }}" type="number" maxlength="20" minlength="0" input-align="center"
+						placeholder="请输入排位" bind:change="onRanking" custom-style="padding: 0;margin: 0; " />
+				</view>
+			</van-cell>
+			<!-- <van-field value="{{ Ranking }}" type="number" maxlength="20" minlength="0" label="我的排位" input-align="center"
+				placeholder="请输入排位" bind:change="onRanking" /> -->
+		</van-cell-group>
+		<!-- 我的分数 -->
+		<van-cell-group>
+			<van-cell>
+				<view class="ScoreRange" slot="title">等同去年分数</view>
+				<view class="Range" slot="right-icon">
+					<van-field value="{{ Fraction }}" placeholder="请输入分数" border="{{ false }}" input-align="center" maxlength="4"
+						type="number" minlength="0" bind:change="onFraction" custom-style="padding: 0;margin: 0;" />
+					<!-- 科类筛选 -->
+					<van-field wx:if="{{FamiliesScreen}}" placeholder="{{Choice}} ▼" disabled input-align="center"
+						bind:click-input="onFamily" custom-style="padding: 0;margin: 0;" placeholder-style="color: black;">
+					</van-field>
+					<!-- 其他科类 -->
+					<van-field wx:else value="{{ Choice }}" bind:change="onChoice" placeholder="请输入科类" input-align="center"
+						custom-style="padding: 0;margin: 0;">
+					</van-field>
+				</view>
+			</van-cell>
+		</van-cell-group>
+		<!-- 分数范围 -->
+		<van-cell-group>
+			<van-cell>
+				<view class="ScoreRange" slot="title">分数范围</view>
+				<view class="Range" slot="right-icon">
+					<van-field value="{{ RangeVal1 }}" placeholder="分数范围" border="{{ false }}" input-align="center" maxlength="4"
+						bind:change="onRangeVal1" type="number" minlength="0" custom-style="padding: 0;margin: 0;" />
+					<text>~~</text>
+					<van-field value="{{RangeVal2}}" placeholder="分数范围" border="{{ false }}" input-align="center" maxlength="4"
+						bind:change="onRangeVal2" type="number" minlength="0" custom-style="padding: 0;margin: 0;" />
+					<van-button round size="small" type="info" disabled="{{disabled}}" bind:click="onSearch">搜索</van-button>
+				</view>
+			</van-cell>
+		</van-cell-group>
+		<van-popup show="{{ showPicker }}" bind:close="onClose" position="bottom">
+			<van-picker show-toolbar columns="{{ Familys }}" bind:cancel="onCancel" bind:confirm="onConfirm" />
+		</van-popup>
+	</van-sticky>
+
+	<!-- <van-sticky>
+		<van-cell>
+			<view class="FractionContent">
+				<view class="Fractiontitranking">我的排名</view>
+				<van-field value="{{ Ranking }}" input-align="center" type="number" minlength="0" placeholder="请输入排位"
+					bind:blur="onRanking" />
+			</view>
+		</van-cell>
+		<van-cell>
+			<view class="FractionContent">
+				<view class="Fractiontit">我的分数</view>
+				<van-field value="{{ Fraction }}" input-align="center" border="{{ true}}" :readonly="readonlyFraction"
+					type="number" maxlength="4" minlength="0" required placeholder="请输入分数" bind:blur="onFraction"
+					bind:input="onInput" />
+				<van-field input-align="center" value="{{ OtherVal }}" wx:if="{{Other}}" border="{{ true}}"
+					:readonly="readonlyOtherVal" placeholder="请输入科类" />
+				<van-field input-align="center" wx:else readonly clickable name="picker" :value="{{valueSelector}}"
+					placeholder="{{Choice}}" bind:click-input="onPickerTrue" />
+				<van-popup show="{{ showPicker }}" bind:close="onClose" position="bottom">
+					<van-picker show-toolbar columns="{{ Familys }}" bind:cancel="onCancel" bind:confirm="onConfirm" />
+				</van-popup>
+			</view>
+		</van-cell>
+		<van-cell>
+			<view class="FractionContent">
+				<view class="FractiontitRange">分数范围</view>
+				<view class="fieldW">
+					<van-field input-align="center" value="{{ RangeVal1 }}" border="{{ true}}" :readonly="readonlyRangeVal1"
+						type="number" maxlength="4" minlength="0" placeholder="分数范围" />
+					<view class="wave">~~</view>
+					<van-field value="{{ RangeVal2 }}" size="large" input-align="center" border="{{ true}}"
+						:readonly="readonlyRangeVal2" type="number" maxlength="4" minlength="0" placeholder="分数范围" />
+				</view>
+			</view>
+			<view slot="right-icon">
+				<van-button round type="info" size="small" bind:click="onFractionSearch">
+					搜索
+				</van-button>
+			</view>
+		</van-cell>
+	</van-sticky> -->
+
+
+
+
+
+
+	<YLM-Table bind:onClick="onClick" config="{{tableConfig}}" rows="{{rows}}" keys="{{keys}}" headers="{{headers}}">
+	</YLM-Table>
+</view>

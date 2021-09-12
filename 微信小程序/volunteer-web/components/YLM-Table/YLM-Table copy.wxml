@@ -1,0 +1,32 @@
+<!--compenents/ylm-Table.wxml-->
+
+<scroll-view scroll-x="{{config.scroll}}" class='scrollClass'>
+	<view class="ylm-Table {{config.border?'ylm-Table-border':''}}">
+		<view  class='ylm-Table-header' style='background-color:{{config.headbgcolor || "#52a5fa"}};'>
+			<view wx:for="{{headers}}" wx:key="index" style="width:{{config.columnWidths[index] || '180rpx'}}"
+			bind:tap="onSort" data-key="{{index}}"	data-item="{{item}}"	class="ylm-Table-header-column {{config.border?'ylm-Table-header-column-border':''}} {{config.titles.length === index + 1 ? 'last-column' : ''}}">
+				{{item}}
+			</view>
+		</view>
+		<view class='ylm-Table-content'>
+			<view wx:for="{{rows}}" wx:for-index="outIndex" wx:for-item="outItem" wx:key="outIndex"
+				class="ylm-Table-content-row {{config.stripe?(outIndex%2 === 0 ? 'ylm-Table-row-white':'ylm-Table-row-gray'):''}}">
+				<view wx:for="{{keys}}" wx:key="index" data-School="{{outItem.school||outItem.name}}"
+					data-score="{{outItem.score}}" data-Majob="{{outItem.school_majob}}" data-item="{{outItem[item]}}"
+					data-Collection="{{outItem[item]}}" data-outIndex="{{outIndex}}" data-grid="{{outIndex}}-{{index}}"
+					bind:tap="onClick" style="width:{{config.columnWidths[index] || '180rpx'}};"
+					class="ylm-Table-content-column {{config.border?'ylm-Table-content-column-border':''}}  {{config.titles.length === index + 1 ? 'last-column' : ''}}">
+					<view wx:if="{{keys[index]==='Collection'}}">
+
+						<van-icon wx:if="{{keys[index]==='collect'}}" name="star" color="#007ACC" size="24" />
+						<van-icon wx:if="{{starO===true?true:false}}" name="star-o" color="#007ACC" size="24" />
+						<van-icon wx:else name="star" color="#007ACC" size="24" />
+					</view>
+					<rich-text wx:else nodes="<p>{{outItem[item]||'暂无数据'}}</p>"></rich-text>
+					<!-- {{outItem[item]||'暂无数据'}} -->
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="nodata" wx:if="{{rows.length===0}}">暂无数据</view>
+</scroll-view>

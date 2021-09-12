@@ -1,0 +1,19 @@
+{
+  "name": "volunteer-web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "@vant/weapp": "^1.6.8",
+    "eval5": "^1.4.6",
+    "flyio": "file:flyio",
+    "regenerator": "^0.14.7",
+    "wxmp-rsa": "^1.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

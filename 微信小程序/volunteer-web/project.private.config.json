@@ -1,0 +1,120 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "查专业",
+          "pathName": "pages/SearchMajor/SearchMajor",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "学校",
+          "pathName": "pages/School/School",
+          "query": "SchoolName=北京大学",
+          "scene": null
+        },
+        {
+          "name": "查分数",
+          "pathName": "pages/Fraction/Fraction",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "就业前景分析",
+          "pathName": "pages/Prospect/Prospect",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "我的",
+          "pathName": "pages/My/My",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "收藏",
+          "pathName": "pages/Collection/Collection",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "定位",
+          "pathName": "pages/Location/Location",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "查学校",
+          "pathName": "pages/SearchAll/SearchAll",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "登录",
+          "pathName": "pages/Login/Login",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "注册",
+          "pathName": "pages/Register/Register",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "查专业",
+          "pathName": "pages/SearchMajor/SearchMajor",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "Vip",
+          "pathName": "pages/Member/Member",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "职业测评题目",
+          "pathName": "pages/Evaluation/Evaluation",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "测评结果",
+          "pathName": "pages/MBTIResult/MBTIResult",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "测评结果分析",
+          "pathName": "pages/MBTIResult/MBTIResult",
+          "query": "MBTI={\"E\":\"67\",\"I\":\"33\",\"S\":\"67\",\"N\":\"33\",\"T\":\"67\",\"F\":\"33\",\"J\":\"33\",\"P\":\"67\"}&Analysis=ESTJ",
+          "scene": null
+        },
+        {
+          "name": "学校投档线",
+          "pathName": "pages/PitchingLine/PitchingLine",
+          "query": "SchoolName=%E4%B8%AD%E5%9B%BD%E4%BA%BA%E6%B0%91%E5%A4%A7%E5%AD%A6",
+          "scene": null
+        },
+        {
+          "name": "专业分数线",
+          "pathName": "pages/ProfessionalScore/ProfessionalScore",
+          "query": "SchoolName=%E4%B8%8A%E6%B5%B7%E4%BA%A4%E9%80%9A%E5%A4%A7%E5%AD%A6",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

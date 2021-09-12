@@ -1,0 +1,11 @@
+<view class="Tab">
+	<van-tabs class="TabH" type="card" color="#00C6E0" :border="true" active="{{ active }}" bind:change="onChangeTab" >
+	<!-- <van-tabs type="card" color="#00C6E0" :border="true" sticky> -->
+		<van-tab title="{{LeftValue}}">
+			<slot name="nav-left">左</slot>
+		</van-tab>
+		<van-tab title="{{RightValue}}">
+			<slot name="nav-right">右</slot>
+		</van-tab>
+	</van-tabs>
+</view>

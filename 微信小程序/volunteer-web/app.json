@@ -1,0 +1,93 @@
+{
+  "tabBar": {
+    "custom": true,
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "list": [
+      {
+        "pagePath": "pages/index/index"
+      },
+      {
+        "pagePath": "pages/My/My"
+      }
+    ]
+  },
+  "pages": [
+    "pages/index/index",
+    "pages/Location/Location",
+    "pages/School/School",
+    "pages/Fraction/Fraction",
+    "pages/ProfessionalScore/ProfessionalScore",
+    "pages/PitchingLine/PitchingLine",
+    "pages/SearchAll/SearchAll",
+    "pages/Evaluation/Evaluation",
+    "pages/MBTIResult/MBTIResult",
+    "pages/My/My",
+    "pages/SearchMajor/SearchMajor",
+    "pages/Member/Member",
+    "pages/Prospect/Prospect",
+    "pages/Collection/Collection",
+    "pages/Edit/Edit",
+    "pages/Login/Login",
+    "pages/Register/Register",
+    "pages/Extranet/Extranet"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "高考志愿填报指南",
+    "navigationBarTextStyle": "black"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "定位信息将用于本小程序分数查询使用,请您打开手机的定位功能"
+    }
+  },
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "Search": "./components/Search/Search",
+    "Screen": "./components/Screen/Screen",
+    "Picker": "./components/Picker/Picker",
+    "Tabs": "./components/Tabs/Tab",
+    "NavBar": "./components/NavBar/NavBar",
+    "Table": "./components/Table/Table",
+    "Vip": "./components/Vip/Vip",
+    "YLM-Table": "./components/YLM-Table/YLM-Table",
+    "Tabbar": "./components/Tabbar/Tabbar",
+    "Empty": "./components/Empty/Empty",
+    "Echarts": "./components/Echarts/Echarts",
+    "ec-canvas": "./ec-canvas/ec-canvas",
+    "van-search": "@vant/weapp/search/index",
+    "van-toast": "@vant/weapp/toast/index",
+    "van-dialog": "@vant/weapp/dialog/index",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "van-nav-bar": "@vant/weapp/nav-bar/index",
+    "van-tabbar": "@vant/weapp/tabbar/index",
+    "van-tabbar-item": "@vant/weapp/tabbar-item/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-empty": "@vant/weapp/empty/index",
+    "van-button": "@vant/weapp/button/index",
+    "van-field": "@vant/weapp/field/index",
+    "van-dropdown-menu": "@vant/weapp/dropdown-menu/index",
+    "van-dropdown-item": "@vant/weapp/dropdown-item/index",
+    "van-image": "@vant/weapp/image/index",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-checkbox": "@vant/weapp/checkbox/index",
+    "van-checkbox-group": "@vant/weapp/checkbox-group/index",
+    "van-divider": "@vant/weapp/divider/index",
+    "van-grid": "@vant/weapp/grid/index",
+    "van-grid-item": "@vant/weapp/grid-item/index",
+    "van-sticky": "@vant/weapp/sticky/index",
+    "van-collapse": "@vant/weapp/collapse/index",
+    "van-collapse-item": "@vant/weapp/collapse-item/index",
+    "van-tag": "@vant/weapp/tag/index",
+    "van-picker": "@vant/weapp/picker/index",
+    "van-radio": "@vant/weapp/radio/index",
+    "van-radio-group": "@vant/weapp/radio-group/index",
+    "van-loading": "@vant/weapp/loading/index",
+    "van-circle": "@vant/weapp/circle/index"
+  }
+}

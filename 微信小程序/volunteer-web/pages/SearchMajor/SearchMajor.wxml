@@ -1,0 +1,15 @@
+<view>
+	<van-toast id="van-toast" />
+	<van-dialog id="van-dialog" />
+	<Search  bind:onChange='onChange' bind:onSearch="onSearch" bind:getWord="getWord" Associa="{{Associa}}"
+		isMajor="{{isMajor}}" SearchKeywords="{{SearchKeywords}}" WordArr="{{WordArr}}" MajorArr="{{MajorArr}}"
+		MoreMajor="{{MoreMajor}}"></Search>
+	<block wx:if="{{Major==false?true:false}}">
+
+		<Vip wx:if="{{isVip}}"></Vip>
+
+
+		<YLM-Table wx:if="{{isTable}}" bind:onClick="onClick" config="{{tableConfig}}" rows="{{rows}}" keys="{{keys}}"
+			headers="{{headers}}"></YLM-Table>
+	</block>
+</view>

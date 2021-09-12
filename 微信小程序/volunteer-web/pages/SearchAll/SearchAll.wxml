@@ -1,0 +1,23 @@
+<view class="SearchAll">
+    <van-toast id="van-toast" />
+    <van-dialog id="van-dialog" />
+    <!-- 搜索 -->
+    <Search bind:onChange='onChange' bind:onSearch="onSearch" bind:getWord="getWord" bind:onScreen="onScreen"
+        MoreMajor="{{MoreMajor}}" Associa="{{Associa}}" isSchool="{{isSchool}}" SearchKeywords="{{SearchKeywords}}"
+        WordArr="{{WordArr}}" SchoolArr="{{SchoolArr}}" More="{{More}}">
+        <view class="Screencss" slot="right-icon" bind:tap="onScreen">
+            <van-icon size="20" name="filter-o" />
+            <text>筛选</text>
+        </view>
+    </Search>
+    <!-- 筛选 -->
+    <Screen Popupshow='{{Popupshow}}' bind:onClose='onClose' bind:onCheckboxScreen='onCheckboxScreen'
+        bind:onRadioScreen='onRadioScreen' bind:onProvince='onProvince' bind:onResetFilter='onResetFilter'
+        bind:onSubmitFilter='onSubmitFilter' SaveScreenResult='{{SaveScreenResult}}'
+        SaveScreenRadio='{{SaveScreenRadio}}' ScreeningResults='{{ScreeningResults}}'>
+    </Screen>
+
+
+
+
+</view>

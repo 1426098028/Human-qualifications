@@ -1,0 +1,116 @@
+<view class="School">
+	<van-toast id="van-toast" />
+	<van-dialog id="van-dialog" />
+	<Tabs LeftValue="{{LeftValue}}" RightValue="{{RightValue}}" bind:onChangeTab='onChangeTab'>
+		<view slot="nav-left">
+			<view class="cell-Line Line"></view>
+			<view class="Name">
+				<van-grid :column-num="1" square>
+					<van-grid-item use-slot center>
+						<text class="SchoolName">{{ SchoolName }}</text>
+						<view class="place">
+							地点:{{ province_name }} / {{ city_name }}
+						</view>
+						<view>
+							<van-tag color="#ffe1e1" text-color="#ad0000">
+								{{ school_type_name }}
+							</van-tag>
+
+							<van-tag color="#ffe1e1" text-color="#ad0000">
+								{{ type_name }}
+							</van-tag>
+
+							<van-tag color="#ffe1e1" text-color="#ad0000">
+								{{ school_nature_name }}
+							</van-tag>
+
+							<van-tag color="#ffe1e1" text-color="#ad0000">
+								{{ dual_class_name }}
+							</van-tag>
+
+							<van-tag color="#ffe1e1" text-color="#ad0000">
+								{{ f985 === 1 ? "985" : "无" }}
+							</van-tag>
+
+							<van-tag color="#ffe1e1" text-color="#ad0000">
+								{{ f211 === 1 ? "211" : "无" }}
+							</van-tag>
+
+						</view>
+					</van-grid-item>
+				</van-grid>
+			</view>
+			<view class="cell-Line Line"></view>
+			<view class="Circle" wx:if="{{isJob}}">
+				<van-cell>
+					<view slot="title">
+						<text class="Employment">就业率统计</text>
+					</view>
+				</van-cell>
+				<van-grid column-num="3" border="{{ false }}">
+					<van-grid-item use-slot>
+						<van-circle value="{{ jobRate }}" size="90"    :color="{ '0%': '#3fecff', '100%': '#6149f6' }" text="{{ jobRate  }}%" />
+					</van-grid-item>
+					<van-grid-item use-slot>
+						<van-circle value="{{ postgraduateRate }}" size="90"  :color="{ '0%': '#3fecff', '100%': '#6149f6' }"
+							text="{{  postgraduateRate }}%" />
+					</van-grid-item>
+					<van-grid-item use-slot>
+						<van-circle value="{{ abroadRate }}" size="90"  :color="{ '0%': '#3fecff', '100%': '#6149f6' }"
+							text="{{  abroadRate }}%" />
+					</van-grid-item>
+				</van-grid>
+			</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			<view class="cell-Line Line"></view>
+
+
+
+			<van-cell is-link title="前去招生地址了解详细" bind:click="Enrollment" />
+			<view class="cell-Line Line"></view>
+			<van-cell>
+				<view slot="title">招生电话：{{ Telephone }}</view>
+			</van-cell>
+			<view class="cell-Line Line"></view>
+			<rich-text nodes="{{content}}"></rich-text>
+			<view class="Left"></view>
+		</view>
+		<view slot="nav-right">
+			<Vip wx:if="{{isVip}}"></Vip>
+			<YLM-Table wx:if="{{isTable}}" config="{{tableConfig}}" VanIcon="{{VanIcon}}" bind:onClick="onClick"
+				starO="{{starO}}" rows="{{rows}}" keys="{{keys}}" headers="{{headers}}"></YLM-Table>
+		</view>
+	</Tabs>
+
+
+
+</view>

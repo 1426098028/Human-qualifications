@@ -1,0 +1,50 @@
+<view class="Fraction">
+	<van-toast id="van-toast" />
+	<van-dialog id="van-dialog" />
+	<van-sticky>
+		<!-- 我的排位 -->
+		<van-cell>
+			<view class="FractionContent">
+				<view class="Fractiontitranking">我的排名</view>
+				<van-field value="{{ Ranking }}" input-align="center" type="number" minlength="0" placeholder="请输入排位"
+					bind:blur="onRanking" />
+			</view>
+		</van-cell>
+		<!-- 我的分数 -->
+		<van-cell>
+			<view class="FractionContent">
+				<view class="Fractiontit">我的分数</view>
+				<van-field value="{{ Fraction }}" input-align="center" border="{{ true}}" :readonly="readonlyFraction"
+					type="number" maxlength="4" minlength="0" required placeholder="请输入分数" bind:blur="onFraction"
+					bind:input="onInput" />
+				<!-- 其他科类 -->
+				<van-field input-align="center" value="{{ OtherVal }}" wx:if="{{Other}}" border="{{ true}}"
+					:readonly="readonlyOtherVal" placeholder="请输入科类" />
+				<van-field input-align="center" wx:else readonly clickable name="picker" :value="{{valueSelector}}"
+					placeholder="{{Choice}}" bind:click-input="onPickerTrue" />
+				<van-popup show="{{ showPicker }}" bind:close="onClose" position="bottom">
+					<van-picker show-toolbar columns="{{ Familys }}" bind:cancel="onCancel" bind:confirm="onConfirm" />
+				</van-popup>
+			</view>
+		</van-cell>
+		<!-- 分数范围 -->
+		<van-cell>
+			<view class="FractionContent">
+				<view class="FractiontitRange">分数范围</view>
+				<view class="fieldW">
+					<van-field input-align="center" value="{{ RangeVal1 }}" border="{{ true}}" :readonly="readonlyRangeVal1"
+						type="number" maxlength="4" minlength="0" placeholder="分数范围" />
+					<view class="wave">~~</view>
+					<van-field value="{{ RangeVal2 }}" size="large" input-align="center" border="{{ true}}"
+						:readonly="readonlyRangeVal2" type="number" maxlength="4" minlength="0" placeholder="分数范围" />
+				</view>
+			</view>
+			<view slot="right-icon">
+				<van-button round type="info" size="small" bind:click="onFractionSearch">
+					搜索
+				</van-button>
+			</view>
+		</van-cell>
+	</van-sticky>
+	<YLM-Table config="{{tableConfig}}" rows="{{rows}}" keys="{{keys}}" headers="{{headers}}"></YLM-Table>
+</view>

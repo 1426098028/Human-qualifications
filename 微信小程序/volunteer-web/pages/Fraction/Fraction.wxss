@@ -1,0 +1,1 @@
+.Fraction .Scorecell .Rank{width:200rpx}.Fraction .Scorecell .Ranking{width:100%}.Fraction .van-cell__title .ScoreRange{width:200rpx}.Fraction .Range{width:80%;display:flex;align-items:center;justify-content:space-around}

@@ -1,0 +1,36 @@
+<view class="Evaluation">
+
+  <Tabs LeftValue="{{LeftValue}}" RightValue="{{RightValue}}">
+
+    <view slot="nav-left">
+    
+
+      <van-cell-group center wx:for="{{AnswerArr}}" wx:key="index" wx:for-item='answer'>
+        <van-cell center title="{{index}}.{{answer.subjectTopic}}" />
+        <van-cell center border="{{ true }}">
+
+          <van-radio-group slot="title" value="{{ Answer[index].value }}" data-index="{{index}}"
+            bind:change="onAnswerSelection">
+            <!-- <van-radio-group slot="title" value="{{ Answer[index].value }}" data-index="{{index}}" > -->
+
+            <van-radio name="A" data-Id="{{index}}">A:{{answer.answer.A}}</van-radio>
+            <van-radio name="B">B:{{answer.answer.B}}</van-radio>
+          </van-radio-group>
+        </van-cell>
+      </van-cell-group>
+    </view>
+    <view slot="nav-right">
+      <van-cell-group center>
+        <van-cell center title="题目" />
+        <van-cell center border="{{ true }}">
+          <van-radio-group slot="title" value="{{ Answer }}" bind:change="onAnswerSelection">
+            <van-radio name="1">单选框1</van-radio>
+            <van-radio name="2">单选框单选框单选框单选框单选框单选框单选框单选框单选框单选框单选框单选框单选框单选框单选框单选框单选框单选框单选框 2</van-radio>
+          </van-radio-group>
+        </van-cell>
+      </van-cell-group>
+
+
+    </view>
+  </Tabs>
+</view>
